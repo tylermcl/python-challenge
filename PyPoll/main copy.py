@@ -51,7 +51,7 @@ print(f"----------------------------")
 print(f"Winner: {key}")
 print(f"----------------------------")
 
-output_file = Path("python-challenge", "PyPoll", "Election_Results_Summary.txt")
+output_file = Path("python-challenge", "PyPoll", "ER_Summary.txt")
 
 with open(output_file,"w") as file:
 

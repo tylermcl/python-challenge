@@ -1,4 +1,17 @@
-dget,delimiter=",") 
+
+import os, csv
+from pathlib import Path 
+
+input_file = Path("python-challenge", "PyBank", "budget_data.csv")
+
+total_months = []
+total_profit = []
+monthly_profit_change = []
+ 
+
+with open(input_file,newline="", encoding="utf-8") as budget:
+
+    csvreader = csv.reader(budget,delimiter=",") 
 
     header = next(csvreader)  
 
@@ -26,7 +39,7 @@ print(f"Average Change: {round(sum(monthly_profit_change)/len(monthly_profit_cha
 print(f"Greatest Increase in Profits: {total_months[max_increase_month]} (${(str(max_increase_value))})")
 print(f"Greatest Decrease in Profits: {total_months[max_decrease_month]} (${(str(max_decrease_value))})")
 
-output_file = Path("python-challenge", "PyBank", "Financial_Analysis_Summary.txt")
+output_file = Path("python-challenge", "PyBank", "FA_Summary.txt")
 
 with open(output_file,"w") as file:
     
